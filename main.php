@@ -49,7 +49,7 @@ session_start();
             <tr>
 			<?php
 				// Create connection to Oracle
-				$conn = oci_connect('system', 'abcd1234', 'localhost/XE');
+				$conn = oci_connect('system', 'abcd1234', '172.31.43.25/XE');
 
 				if (!$conn) {
 				   $m = oci_error();
