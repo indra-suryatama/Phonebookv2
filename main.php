@@ -48,21 +48,19 @@ session_start();
           <tbody id="mytable">
             <tr>
 			<?php
-				// Create connection to Oracle
-				$conn = oci_connect('system', 'abcd1234', '172.31.43.25/XE');
+				// Create connection to Postgres
+        $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
+        
 
-				if (!$conn) {
-				   $m = oci_error();
-				   echo $m['message'], "\n";
-				   exit;
-				}
 
 				//$loginId = $_GET['loginId'];
 				$sql = 'SELECT * FROM phonebook WHERE loginid=\''.$_SESSION['user'].'\'';
-				$stid = oci_parse($conn, $sql);
-				oci_execute($stid);
+        $row = $myPDO->prepare($sql);
+        $row->execute();
+        
+        $rows = $query->fetchAll(PDO::FETCH_CLASS, 'ArrayObject');
 				$count = 0;
-				while (($row = oci_fetch_row($stid))) {
+				foreach ($rows as $row) {
 					$count++;
 					echo '<tr>';
 					echo '<td>'.$count .'</td><td>'.$row[1] . '</td> <td>' . $row[2]. '</td> <td>' . $row[3] . ' </td>
@@ -71,8 +69,7 @@ session_start();
 					echo '</tr>';
 				}
 
-				oci_free_statement($stid);
-				oci_close($conn);
+		
 			?> 
             </tr>
           </tbody>

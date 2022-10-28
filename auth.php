@@ -1,17 +1,17 @@
 <?php
 	session_start(); 
-	$conn = oci_connect('system', 'abcd1234', '172.31.43.25/XE');
+	$myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-	echo $username;
+	//echo $username;
 	
 	$sql = 'SELECT id FROM login WHERE name= \''.$username.'\' and password =\''.$password.'\'';
 	echo $sql;
-	$stid = oci_parse($conn, $sql);
-	oci_execute($stid);
+	$row = $myPDO->prepare($sql);
+    $row->execute();
 	
-	if($row = oci_fetch_row($stid)) {
-		$loginId = $row[0];
+	if($rows = $row->fetchall())) {
+		$loginId = $rows[0];
 	} else {
 		$loginId = 0;
 	}
@@ -29,8 +29,6 @@
 		Header("Location: login.php?authenticationFailed=1");
 		echo 'false';
 	}
-	oci_free_statement($stid);
-	oci_close($conn);
 
 	 echo $_POST['username']; 
 	 echo $_POST['password']; 
