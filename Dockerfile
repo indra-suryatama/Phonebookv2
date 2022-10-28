@@ -5,7 +5,6 @@
 # OS: Debian 9 Streatch-slim
 #
 FROM php:8.1-fpm
-
 #
 #--------------------------------------------------------------------------
 # General Updates
