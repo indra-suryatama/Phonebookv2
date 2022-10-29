@@ -1,4 +1,5 @@
 <?php
+	ob_start();
     $id = $_POST['id']; 
     $conn = oci_connect('system', 'abcd1234', 'localhost/XE');
 	
