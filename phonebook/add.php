@@ -7,6 +7,9 @@
 	$phoneNumber = $_POST["phoneNumber"];
 	
 	echo($name);
+	echo($address);
+	
+	
 	//$conn = oci_connect('system', 'abcd1234', 'localhost/XE');
 	$myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
 	$sql = 'SELECT max(id) FROM login';
@@ -18,7 +21,7 @@
 	//echo('The ID is',$id);
 	//$stid = oci_parse($conn, $sql);
 	//oci_execute($stid);
-
+	echo($phoneNumber.' id is ',$id);
 	
 	$sql2 = 'INSERT INTO phonebook VALUES('.$id.', \''.$name.'\', \''.$address.'\', \''.$phoneNumber.'\', '.$loginID.')';
     $row = $myPDO->prepare($sql2);
