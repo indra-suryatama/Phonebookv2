@@ -18,9 +18,9 @@ function userCreate() {
   const name = document.getElementById("name").value;
   const address = document.getElementById("address").value;
   const phoneNumber = document.getElementById("phoneNumber").value;
-  console.log('name', name);
+  //console.log('name', name);
   const data = {"name":name, "address": address, "phoneNumber":phoneNumber};
- 
+  console.log(data);
 	var request;
 
     // Prevent default posting of form - put here to work in case of errors
@@ -48,7 +48,7 @@ function userCreate() {
     request.done(function (response, textStatus, jqXHR){
         // Log a message to the console
         // console.log("Hooray, it ssss!"+ response+textStatus);
-        location.reload();
+        //location.reload();
     });
 
     // Callback handler that will be called on failure
