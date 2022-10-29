@@ -8,7 +8,7 @@
 	
 	//echo($name);
 	$myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
-	$sql = 'SELECT max(id) FROM login';
+	$sql = 'SELECT max(id) FROM phonebook';
 	$row = $myPDO->prepare($sql);
     $row->execute();
 	if($result = $row->fetch()) {
@@ -20,6 +20,9 @@
 	//oci_execute($stid);
 	
 	$sql2 = 'INSERT INTO phonebook VALUES('.$id.', \''.$name.'\', \''.$address.'\', \''.$phoneNumber.'\', '.$loginID.')';
+	//insert into phonebook values (3,'levana','jln mandala aa,','08555555',1);
+	//$sql= 'UPDATE phonebook set name=\''.$name.'\', address=\''.$address.'\', phoneNumber=\''.$phoneNumber.'\' WHERE id = '.$id;
+	//$sql2 = 'INSERT INTO phonebook VALUES('.$id.', \''.$name.'\', \''.$address.'\', \''.$phoneNumber.'\', '.$loginID.')';
     $row = $myPDO->prepare($sql2);
 	$row->execute();
 
