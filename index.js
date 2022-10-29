@@ -166,7 +166,7 @@ function userEdit() {
 
 request.done(function (response, textStatus, jqXHR) {
   console.log('response', response);
- location.reload();
+ //location.reload();
 }); 
  
 }
