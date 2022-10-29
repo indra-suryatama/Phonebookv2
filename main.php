@@ -56,10 +56,11 @@
         $result->execute();
 
 				//$loginId = $_GET['loginId'];
-				
-	
+				//$row = result->fetchAll()
+        //var_dump($row);
 				$count = 0;
-				while ($row = result->fetchAll()) {
+				while ($row = result->fetchAll(PDO::FETCH_COLUMN, 0)) {
+          
 					$count++;
           var_dump($row);
 					echo '<tr>';
