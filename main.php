@@ -49,10 +49,9 @@ session_start();
             <tr>
 			<?php
 				// Create connection to Postgres
+        echo 'Success'
         $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
         
-
-
 				//$loginId = $_GET['loginId'];
 				$sql = 'SELECT * FROM phonebook WHERE loginid=\''.$_SESSION['user'].'\'';
         $row = $myPDO->prepare($sql);
