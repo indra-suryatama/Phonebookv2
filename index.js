@@ -18,7 +18,7 @@ function userCreate() {
   const name = document.getElementById("name").value;
   const address = document.getElementById("address").value;
   const phoneNumber = document.getElementById("phoneNumber").value;
-  //console.log('name', name);
+  
   const data = {"name":name, "address": address, "phoneNumber":phoneNumber};
   console.log(data);
 	var request;
@@ -30,14 +30,7 @@ function userCreate() {
     if (request) {
         request.abort();
     }
-    // setup some local variables
     
-    // Let's disable the inputs for the duration of the Ajax request.
-    // Note: we disable elements AFTER the form data has been serialized.
-    // Disabled form elements will not be serialized.
-    //$inputs.prop("disabled", true);
-
-    // Fire off the request to /form.php
     request = $.ajax({
         url: "/phonebook/add.php",
         type: "post",
@@ -48,7 +41,7 @@ function userCreate() {
     request.done(function (response, textStatus, jqXHR){
         // Log a message to the console
         // console.log("Hooray, it ssss!"+ response+textStatus);
-        //location.reload();
+        location.reload();
     });
 
     // Callback handler that will be called on failure
@@ -166,7 +159,7 @@ function userEdit() {
 
 request.done(function (response, textStatus, jqXHR) {
   console.log('response', response);
- //location.reload();
+ location.reload();
 }); 
  
 }

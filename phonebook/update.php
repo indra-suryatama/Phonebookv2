@@ -14,4 +14,6 @@
 	//$sql2 = 'INSERT INTO phonebook VALUES('.$id.', \''.$name.'\', \''.$address.'\', \''.$phoneNumber.'\', '.$loginID.')';
 	$row= $myPDO->prepare($sql);
 	$row->execute();
+
+	// Berhasil
 ?>
