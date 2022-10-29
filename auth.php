@@ -12,7 +12,7 @@
 	//testing
 	if($result = $row->fetchAll()) {
 		$loginId = $result[0];
-		echo($loginID)
+		echo($loginID);
 		var_dump($result);
 	} else {
 		$loginId = 0;
