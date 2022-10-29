@@ -13,7 +13,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-    <title>CRUD FROM API</title>
+    <title>Phonebook PT Maju Bersama</title>
 
     <link href="index.css" rel="stylesheet">
   </head>
@@ -72,6 +72,7 @@
 					<td><button type="button" class="btn btn-outline-secondary" onclick="showUserEditBox('.$row[0].')">Edit</button>
 					<button type="button" class="btn btn-outline-danger" onclick="userDelete('.$row[0].')">Del</button></td>';
 					echo '</tr>';
+          
 				}
 
 
