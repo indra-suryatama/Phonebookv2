@@ -9,7 +9,7 @@
 	if($result = $row->fetch()) {
 		$id = $result[0] + 1;
 	}
-	echo('The ID is',$id);
+	echo('The ID is'.$id);
 	//$stid = oci_parse($conn, $sql);
 	//oci_execute($stid);
     $loginID = 1;
