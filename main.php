@@ -59,8 +59,9 @@
 				
 	
 				$count = 0;
-				while ($row = result->fetch()) {
+				while ($row = result->fetchAll()) {
 					$count++;
+          var_dump($row);
 					echo '<tr>';
 					echo '<td>'.$count .'</td><td>'.$row[1] . '</td> <td>' . $row[2]. '</td> <td>' . $row[3] . ' </td>
 					<td><button type="button" class="btn btn-outline-secondary" onclick="showUserEditBox('.$row[0].')">Edit</button>
