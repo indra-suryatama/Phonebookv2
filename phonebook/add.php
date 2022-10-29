@@ -16,14 +16,15 @@
 	if($result = $row->fetch()) {
 		$id = $result[0] + 1;
 	}
-	
+	echo('The ID is',$id);
 	//$stid = oci_parse($conn, $sql);
 	//oci_execute($stid);
 
 	
 	$sql = 'INSERT INTO phonebook (id, loginId, name, address, phoneNumber) VALUES('.$id.',\''.$loginID.'\', \''.$name.'\', \''.$address.'\', '.$phoneNumber.')';
+	echo($sql);
 	$row = $myPDO->prepare($sql);
-	var_dump($sql);
+
 	$row->execute();
 	/*
 	$stid = oci_parse($conn, 'INSERT INTO phonebook (id, loginId, name, address, phoneNumber) VALUES(:id, :loginid, :myname, :myaddress, :myphonenumber)');
