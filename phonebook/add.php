@@ -21,11 +21,11 @@
 	//oci_execute($stid);
 
 	
-	$sql = 'INSERT INTO phonebook (id, loginId, name, address, phoneNumber) VALUES('.$id.',\''.$loginID.'\', \''.$name.'\', \''.$address.'\', '.$phoneNumber.')';
-	echo($sql);
-	$row = $myPDO->prepare($sql);
-
+	$sql2 = 'INSERT INTO phonebook VALUES('.$id.', \''.$name.'\', \''.$address.'\', \''.$phoneNumber.'\', '.$loginID.')';
+    $row = $myPDO->prepare($sql2);
 	$row->execute();
+
+
 	/*
 	$stid = oci_parse($conn, 'INSERT INTO phonebook (id, loginId, name, address, phoneNumber) VALUES(:id, :loginid, :myname, :myaddress, :myphonenumber)');
 
