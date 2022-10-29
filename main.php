@@ -59,7 +59,7 @@
 				//$row = result->fetchAll()
         //var_dump($row);
 				$count = 0;
-				$rows = result->fetchAll(PDO::FETCH_COLUMN, 0)) ;
+				$rows = result->fetchAll(PDO::FETCH_COLUMN, 0) ;
         
         foreach ($rows as $row)
         {
