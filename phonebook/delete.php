@@ -1,9 +1,9 @@
 <?php
 	ob_start();
-	session_start();
+	sesion_start();
 	$id = $_POST["id"];
 	$myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
-	$sql= 'DELETE phonebook WHERE id = 4';
-	$row= $myPDO->prepare(sql);
+	$sql= 'DELETE phonebook WHERE id ='.$id;
+	$row= $myPDO->prepare($sql);
 	$row->execute();
 ?>
