@@ -59,7 +59,7 @@
 				
 	
 				$count = 0;
-				while (($row = result->fetch()) {
+				while ($row = result->fetch()) {
 					$count++;
 					echo '<tr>';
 					echo '<td>'.$count .'</td><td>'.$row[1] . '</td> <td>' . $row[2]. '</td> <td>' . $row[3] . ' </td>
