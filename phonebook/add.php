@@ -6,7 +6,7 @@
 	$address = $_POST["address"];
 	$phoneNumber = $_POST["phoneNumber"];
 	
-	echo($name);
+	//echo($name);
 	$myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
 	$sql = 'SELECT max(id) FROM login';
 	$row = $myPDO->prepare($sql);
@@ -14,6 +14,7 @@
 	if($result = $row->fetch()) {
 		$id = $result[0] + 1;
 	}
+	else $id = 1;
 	//echo('The ID is',$id);
 	//$stid = oci_parse($conn, $sql);
 	//oci_execute($stid);

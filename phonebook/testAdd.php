@@ -8,9 +8,13 @@
     $row->execute();
 	if($result = $row->fetch()) {
 		$id = $result[0] + 1;
+        
 	}
+    else $id=1;
 	echo('The ID is'.$id);
-
+    var_dump($result);
+    echo('<br>'.$result);
+/*
     $loginID = 1;
     $name = 'Keiko';
     $address = 'tomang';
@@ -20,6 +24,6 @@
     $row = $myPDO->prepare($sql2);
 	$row->execute();
     echo ('success add');
-    //Berhasil
+    //Berhasil*/
 	
 ?>
