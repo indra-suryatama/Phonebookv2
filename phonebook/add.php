@@ -5,9 +5,9 @@
 	$name = $_POST["name"];
 	$address = $_POST["address"];
 	$phoneNumber = $_POST["phoneNumber"];
-	
-	echo($name);
 	echo($address);
+	echo($name);
+	
 	
 	
 	//$conn = oci_connect('system', 'abcd1234', 'localhost/XE');
