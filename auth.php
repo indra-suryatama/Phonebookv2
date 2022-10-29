@@ -1,4 +1,5 @@
 <?php
+	ob_start()
 	session_start(); 
 	$myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
 	$username = $_POST['username'];
@@ -24,8 +25,8 @@
 		
 		$_SESSION['user'] = $loginId;
 		echo 'user: '.$_SESSION['user'];
-		Header("Location: login.php");
-		//Header("Location: main.php?user=".$username."&loginId=".$loginId);
+		//Header("Location: login.php");
+		Header("Location: main.php?user=".$username."&loginId=".$loginId);
 		echo 'true';
 	} 
 	else {
