@@ -6,7 +6,7 @@
 	//echo $username;
 	
 	$sql = 'SELECT id FROM login WHERE name= \''.$username.'\' and password =\''.$password.'\'';
-	echo $sql;
+	//echo $sql;
 	$row = $myPDO->prepare($sql);
     $row->execute();
 	//testing
@@ -24,7 +24,8 @@
 		
 		$_SESSION['user'] = $loginId;
 		echo 'user: '.$_SESSION['user'];
-		Header("Location: main.php?user=".$username."&loginId=".$loginId);
+		Header("Location: login.php");
+		//Header("Location: main.php?user=".$username."&loginId=".$loginId);
 		echo 'true';
 	} 
 	else {
