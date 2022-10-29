@@ -6,6 +6,6 @@
 	
 		
 	$sql= 'DELETE phonebook WHERE id = '.$id ;
-	$row = $myPDO->prepare(sql2);
+	$row = $myPDO->prepare(sql);
 	$row->execute();
 ?>
