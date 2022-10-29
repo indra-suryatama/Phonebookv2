@@ -18,16 +18,10 @@ function userCreate() {
   const name = document.getElementById("name").value;
   const address = document.getElementById("address").value;
   const phoneNumber = document.getElementById("phoneNumber").value;
- // console.log('name', name);
- const data = {"name":name, "address": address, "phoneNumber":phoneNumber};
+  console.log('name', name);
+  const data = {"name":name, "address": address, "phoneNumber":phoneNumber};
  
- /*
- $.post('/phonebook/add.php', serializedData, function(response) {
-    // Log the response to the console
-    console.log("Response: "+response);
-});*/
 	var request;
-
 
     // Prevent default posting of form - put here to work in case of errors
     event.preventDefault();
