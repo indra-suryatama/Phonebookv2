@@ -65,9 +65,8 @@
         //while ($row=$result->fetchAll(PDO::FETCH_COLUMN, 0))
         while ($row=$result->fetch())
         {
-          
 					$count++;
-          var_dump($row);
+          //var_dump($row);
 					echo '<tr>';
 					echo '<td>'.$count .'</td><td>'.$row[1] . '</td> <td>' . $row[2]. '</td> <td>' . $row[3] . ' </td>
 					<td><button type="button" class="btn btn-outline-secondary" onclick="showUserEditBox('.$row[0].')">Edit</button>
