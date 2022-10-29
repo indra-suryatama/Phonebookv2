@@ -1,7 +1,6 @@
 <?php
-ob_start();
-session_start(); 
-
+	ob_start();
+  session_start(); 
 	if (isset($_SESSION['user'])) {
 ?>
 <html>
@@ -22,7 +21,7 @@ session_start();
     
     <nav class="navbar navbar-dark bg-mynav">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">My App</a>
+        <a class="navbar-brand" href="#">My Apps</a>
 		 <a class="navbar-brand" href="/logout.php">Logout</a>
       </div>
 	 
@@ -44,33 +43,32 @@ session_start();
               <th scope="col">Name</th>
               <th scope="col">Address</th>
               <th scope="col">Phone Number</th>
-			  <th scope="col">Action</th>
+			    <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody id="mytable">
             <tr>
 			<?php
-				// Create connection to Postgres
-        echo 'Success'
+				// Create connection to Oracle
         $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
-        
+        $sql = 'SELECT * FROM phonebook WHERE loginid=\''.$_SESSION['user'].'\'';
+        $result = $myPDO->prepare($sql);
+        $result->execute();
+
 				//$loginId = $_GET['loginId'];
-				$sql = 'SELECT * FROM phonebook WHERE loginid=\''.$_SESSION['user'].'\'';
-        $row = $myPDO->prepare($sql);
-        $row->execute();
-        
-        $rows = $query->fetchAll(PDO::FETCH_CLASS, 'ArrayObject');
+				
+	
 				$count = 0;
-				foreach ($rows as $row) {
+				while (($row = result->fetch()) {
 					$count++;
 					echo '<tr>';
 					echo '<td>'.$count .'</td><td>'.$row[1] . '</td> <td>' . $row[2]. '</td> <td>' . $row[3] . ' </td>
-					<td><button type="button" class="btn btn-outline-secondary" onclick="showUserEditBox()">Edit</button>
-					<button type="button" class="btn btn-outline-danger" onclick="userDelete()">Del</button></td>';
+					<td><button type="button" class="btn btn-outline-secondary" onclick="showUserEditBox('.$row[0].')">Edit</button>
+					<button type="button" class="btn btn-outline-danger" onclick="userDelete('.$row[0].')">Del</button></td>';
 					echo '</tr>';
 				}
 
-		
+
 			?> 
             </tr>
           </tbody>
@@ -80,6 +78,7 @@ session_start();
 	<script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   </body>
 
 </body>
