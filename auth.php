@@ -10,9 +10,9 @@
 	$row = $myPDO->prepare($sql);
     $row->execute();
 	//testing
-	if($result = $row->fetchAll()) {
+	if($result = $row->fetch()) {
 		$loginId = $result[0];
-		echo($loginID);
+		echo($loginId);
 		var_dump($result);
 	} else {
 		$loginId = 0;
