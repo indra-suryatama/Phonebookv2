@@ -2,18 +2,10 @@
 	ob_start();
 	session_start();
 	$id = $_POST["id"];
-
-	$conn = oci_connect('system', 'abcd1234', 'localhost/XE');
+	$myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
+	
 		
-	$stid = oci_parse($conn, 'DELETE phonebook WHERE id = :id') ;
-	oci_bind_by_name($stid, ':id', $id);
-
-	$r = oci_execute($stid);  // executes and commits
-
-	if ($r) {
-		print "One row updated";
-	}
-
-	oci_free_statement($stid);
-	oci_close($conn);
+	$sql= 'DELETE phonebook WHERE id = '.$id ;
+	$row = $myPDO->prepare(sql2);
+	$row->execute();
 ?>
