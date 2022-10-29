@@ -17,9 +17,9 @@
     $address = 'tomang';
     $phoneNumber = '628595'
 	
-	$sql = 'INSERT INTO phonebook (id, loginId, name, address, phoneNumber) VALUES(3,\''.$loginID.'\', \''.$name.'\', \''.$address.'\', '.$phoneNumber.')';
-	echo($sql);
-	$row = $myPDO->prepare($sql);
+	$sql2 = 'INSERT INTO phonebook (id, loginId, name, address, phoneNumber) VALUES(3,\''.$loginID.'\', \''.$name.'\', \''.$address.'\', '.$phoneNumber.')';
+	echo($sql2);
+	$row = $myPDO->prepare($sql2);
 	$row->execute();
     echo ('success add');
 	/*
