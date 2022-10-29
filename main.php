@@ -62,7 +62,8 @@
 				//$rows = $result->fetchAll(PDO::FETCH_COLUMN, 0) ;
         
         //foreach ($rows as $row)
-        while ($row=$result->fetchAll(PDO::FETCH_COLUMN, 0))
+        //while ($row=$result->fetchAll(PDO::FETCH_COLUMN, 0))
+        while ($row=$result->fetch())
         {
           
 					$count++;
