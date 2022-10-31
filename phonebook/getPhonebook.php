@@ -1,7 +1,8 @@
 <?php
 	ob_start();
     $id = $_POST['id']; 
-    $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
+ //       $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
+ $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=production','admin','abcd1234');
 	$sql = 'SELECT * FROM phonebook WHERE id = '.$id;
 	
 	$result = $myPDO->prepare($sql);
@@ -11,4 +12,5 @@
         $data = array("id"=> $row[0], "name"=> $row[1], "address"=>  $row[2], "phoneNumber" => $row[3]);
         echo json_encode($data);
 	}
+	//Berhasil
 ?>

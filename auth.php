@@ -1,7 +1,8 @@
 <?php
 	ob_start();
 	session_start(); 
-	$myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
+ //       $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
+ 	$myPDO = new PDO('pgsql:host=10.1.137.140;dbname=production','admin','abcd1234');
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	//echo $username;
