@@ -7,7 +7,7 @@
 	$password = $_POST['password'];
 	//echo $username;
 	
-	$sql = 'SELECT id FROM "ADMIN"."LOGIN" WHERE name= \''.$username.'\' and password =\''.$password.'\'';
+	$sql = 'SELECT id FROM "ADMIN"."LOGIN" WHERE NAME= \''.$username.'\' and PASSWORD =\''.$password.'\'';
 	//echo $sql;
 	$row = $myPDO->prepare($sql);
     $row->execute();
