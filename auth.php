@@ -6,7 +6,7 @@
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	//echo $username;
-	
+	//change to capital
 	$sql = 'SELECT ID FROM "ADMIN"."LOGIN" WHERE NAME= \''.$username.'\' and PASSWORD =\''.$password.'\'';
 	//echo $sql;
 	$row = $myPDO->prepare($sql);
