@@ -9,7 +9,7 @@
 	//echo($name);
  //       $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
  $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=production','postgres','abcd1234');
- 	$sql = 'SELECT max(id) FROM phonebook';
+ 	$sql = 'SELECT max(id) FROM "ADMIN"."PHONEBOOK"';
 	$row = $myPDO->prepare($sql);
     $row->execute();
 	if($result = $row->fetch()) {
@@ -20,7 +20,7 @@
 	//$stid = oci_parse($conn, $sql);
 	//oci_execute($stid);
 	
-	$sql2 = 'INSERT INTO phonebook VALUES('.$id.', \''.$name.'\', \''.$address.'\', \''.$phoneNumber.'\', '.$loginID.')';
+	$sql2 = 'INSERT INTO "ADMIN"."PHONEBOOK" VALUES('.$id.', \''.$name.'\', \''.$address.'\', \''.$phoneNumber.'\', '.$loginID.')';
 	//insert into phonebook values (3,'levana','jln mandala aa,','08555555',1);
 	//$sql= 'UPDATE phonebook set name=\''.$name.'\', address=\''.$address.'\', phoneNumber=\''.$phoneNumber.'\' WHERE id = '.$id;
 	//$sql2 = 'INSERT INTO phonebook VALUES('.$id.', \''.$name.'\', \''.$address.'\', \''.$phoneNumber.'\', '.$loginID.')';

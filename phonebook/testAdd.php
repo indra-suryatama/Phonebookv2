@@ -4,7 +4,7 @@
 	
  //       $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
  $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=production','postgres','abcd1234');
-	$sql = 'SELECT max(id) FROM login';
+	$sql = 'SELECT max(id) FROM "ADMIN"."LOGIN"';
 	$row = $myPDO->prepare($sql);
     $row->execute();
 	if($result = $row->fetch()) {
