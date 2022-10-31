@@ -51,7 +51,7 @@
 			<?php
 				// Create connection to Oracle
  //       $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
-        $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=production','admin','abcd1234');
+ $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=production','postgres','abcd1234');
         $sql = 'SELECT * FROM phonebook WHERE loginid=\''.$_SESSION['user'].'\'';
         $result = $myPDO->prepare($sql);
         $result->execute();
