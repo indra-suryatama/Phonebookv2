@@ -6,6 +6,7 @@
 <div class="container">
    <form action="auth.php" method="post">
         <div id="div_login">
+        <title>Phonebook PT Maju Bersama</title>
             <h1>Login</h1>
             <div>
                 <input type="text" class="textbox" id="txt_uname" name="username" placeholder="Username" />
