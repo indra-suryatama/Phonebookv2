@@ -9,7 +9,7 @@
 	//echo($name);
  //       $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
  $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=production','postgres','abcd1234');
- 	$sql = 'SELECT max("ADMIN"."ID") FROM "ADMIN"."PHONEBOOK"';
+ 	$sql = 'SELECT max("ID") FROM "ADMIN"."PHONEBOOK"';
 	$row = $myPDO->prepare($sql);
     $row->execute();
 	if($result = $row->fetch()) {
