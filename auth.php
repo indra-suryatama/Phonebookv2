@@ -2,12 +2,12 @@
 	ob_start();
 	session_start(); 
  //       $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
- $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=production','postgres','abcd1234');
+ 	$myPDO = new PDO('pgsql:host=10.1.137.140;dbname=production','postgres','abcd1234');
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	//echo $username;
 	//change to capital
-	$sql = 'SELECT "ID" FROM "ADMIN"."LOGIN" WHERE "NAME"= \''.$username.'\' and "PASSWORD" =\''.$password.'\'';
+	$sql = 'SELECT "ID" FROM "ADMIN"."LOGIN" WHERE "ADMIN"."NAME"= \''.$username.'\' and "ADMIN"."PASSWORD" =\''.$password.'\'';
 	//echo $sql;
 	$row = $myPDO->prepare($sql);
     $row->execute();
