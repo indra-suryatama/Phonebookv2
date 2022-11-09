@@ -7,7 +7,7 @@
 	$password = $_POST['password'];
 	//echo $username;
 	//change to capital
-	$sql = 'SELECT "ID" FROM "ADMIN"."LOGIN" WHERE "ADMIN"."NAME"= \''.$username.'\' and "ADMIN"."PASSWORD" =\''.$password.'\'';
+	$sql = 'SELECT "ADMIN"."ID" FROM "ADMIN"."LOGIN" WHERE "ADMIN"."NAME"= \''.$username.'\' and "ADMIN"."PASSWORD" =\''.$password.'\'';
 	//echo $sql;
 	$row = $myPDO->prepare($sql);
     $row->execute();

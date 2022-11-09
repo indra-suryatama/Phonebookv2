@@ -3,7 +3,7 @@
     $id = $_POST['id']; 
  //       $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=testdb','postgres','abcd1234');
  $myPDO = new PDO('pgsql:host=10.1.137.140;dbname=production','postgres','abcd1234');
-	$sql = 'SELECT * FROM "ADMIN"."PHONEBOOK" WHERE "ID" = '.$id;
+	$sql = 'SELECT * FROM "ADMIN"."PHONEBOOK" WHERE "ADMIN"."ID" = '.$id;
 	
 	$result = $myPDO->prepare($sql);
 	$result->execute();
